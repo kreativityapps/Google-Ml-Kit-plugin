@@ -1,10 +1,6 @@
 #import "GoogleMlKitTextRecognitionPlugin.h"
 #import <MLKitTextRecognition/MLKitTextRecognition.h>
 #import <MLKitTextRecognitionCommon/MLKitTextRecognitionCommon.h>
-#import <MLKitTextRecognitionChinese/MLKitTextRecognitionChinese.h>
-#import <MLKitTextRecognitionDevanagari/MLKitTextRecognitionDevanagari.h>
-#import <MLKitTextRecognitionJapanese/MLKitTextRecognitionJapanese.h>
-#import <MLKitTextRecognitionKorean/MLKitTextRecognitionKorean.h>
 #import <google_mlkit_commons/GoogleMlKitCommonsPlugin.h>
 
 #define channelName @"google_mlkit_text_recognizer"
@@ -41,22 +37,6 @@
         case 0 : {
             MLKTextRecognizerOptions *latinOptions = [[MLKTextRecognizerOptions alloc] init];
             return [MLKTextRecognizer textRecognizerWithOptions:latinOptions];
-        }
-        case 1 : {
-            MLKChineseTextRecognizerOptions *chineseOptions = [[MLKChineseTextRecognizerOptions alloc] init];
-            return [MLKTextRecognizer textRecognizerWithOptions:chineseOptions];
-        }
-        case 2 : {
-            MLKDevanagariTextRecognizerOptions *devanagariOptions = [[MLKDevanagariTextRecognizerOptions alloc] init];
-            return [MLKTextRecognizer textRecognizerWithOptions:devanagariOptions];
-        }
-        case 3 : {
-            MLKJapaneseTextRecognizerOptions *japaneseOptions = [[MLKJapaneseTextRecognizerOptions alloc] init];
-            return [MLKTextRecognizer textRecognizerWithOptions:japaneseOptions];
-        }
-        case 4 : {
-            MLKKoreanTextRecognizerOptions *koreanOptions = [[MLKKoreanTextRecognizerOptions alloc] init];
-            return [MLKTextRecognizer textRecognizerWithOptions:koreanOptions];
         }
         default:
             return NULL;
