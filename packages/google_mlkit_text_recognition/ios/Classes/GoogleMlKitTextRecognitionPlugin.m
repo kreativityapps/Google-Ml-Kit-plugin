@@ -44,12 +44,32 @@
 }
 
 - (void)handleDetection:(FlutterMethodCall *)call result:(FlutterResult)result {
+    if (!call.arguments[@"imageData"]) {
+        result([FlutterError errorWithCode:@"INVALID_ARGUMENTS"
+                                   message:@"The provided image data argument is missing."
+                                   details:nil]);
+        return;
+    }
+
     MLKVisionImage *image = [MLKVisionImage visionImageFromData:call.arguments[@"imageData"]];
+
+    if (!image) {
+        result([FlutterError errorWithCode:@"INVALID_IMAGE"
+                                   message:@"The provided image data is invalid or nil."
+                                   details:nil]);
+        return;
+    }
     
     NSString *uid = call.arguments[@"id"];
     MLKTextRecognizer *textRecognizer = [instances objectForKey:uid];
     if (textRecognizer == NULL) {
         textRecognizer = [self initialize:call];
+        if (!textRecognizer) {
+            result([FlutterError errorWithCode:@"INITIALIZATION_ERROR"
+                                       message:@"Failed to initialize the text recognizer."
+                                       details:nil]);
+            return;
+        }
         instances[uid] = textRecognizer;
     }
     

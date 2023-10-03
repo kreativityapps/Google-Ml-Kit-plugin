@@ -35,7 +35,9 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.mlkit:text-recognition:16.0.0-beta6'
+    implementation 'com.google.mlkit:text-recognition:16.0.0' // v2 - beta6 SIGILL!
+//    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:18.0.2'  // v1
+
 //    implementation 'com.google.mlkit:text-recognition-chinese:16.0.0-beta5'
 //    implementation 'com.google.mlkit:text-recognition-devanagari:16.0.0-beta5'
 //    implementation 'com.google.mlkit:text-recognition-japanese:16.0.0-beta5'
