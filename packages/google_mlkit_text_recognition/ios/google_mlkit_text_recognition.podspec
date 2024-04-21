@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
 #   s.dependency 'GoogleMLKit/TextRecognition', '~> 3.2.0'
-  s.dependency 'GoogleMLKit/TextRecognition', '~> 4.0.0'
+  s.dependency 'GoogleMLKit/TextRecognition', '~> 6.0.0'
 #   s.dependency 'GoogleMLKit/TextRecognitionChinese', '~> 3.2.0'
 #   s.dependency 'GoogleMLKit/TextRecognitionDevanagari', '~> 3.2.0'
 #   s.dependency 'GoogleMLKit/TextRecognitionJapanese', '~> 3.2.0'
